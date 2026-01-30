@@ -4,7 +4,7 @@ pipeline {
         stage('test') {
             agent {
                 docker {
-                    image 'public.ecr.aws/amazoncorretto/amazoncorretto:21'
+                    image 'public.ecr.aws/amazoncorretto/amazoncorretto:25'
                     args '-u root:root -v $HOME/.gradle:/root/.gradle'
                     reuseNode true
                 }
@@ -18,7 +18,7 @@ pipeline {
         stage('build-jar') {
             agent {
                 docker {
-                    image 'public.ecr.aws/amazoncorretto/amazoncorretto:21'
+                    image 'public.ecr.aws/amazoncorretto/amazoncorretto:25'
                     args '-u root:root -v $HOME/.gradle:/root/.gradle'
                     reuseNode true
                 }
